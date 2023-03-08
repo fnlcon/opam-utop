@@ -1,8 +1,8 @@
 FROM ocaml/opam:latest
 
 RUN --mount=type=cache,target=/var/cache/apt \
-    apt-get update && \
-    apt-get install pkg-config
+    sudo apt-get update && \
+    sudo apt-get install -y pkg-config
 
 RUN --mount=type=cache,target=/home/opam/.opam \
     opam install utop
